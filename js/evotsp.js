@@ -139,7 +139,7 @@
     // This request will return a complete route JSON object.
     // You should display the returned information in 
     // `#route-by-id-elements` (after clearing it first).
-    function getRouteById() {
+    function getRouteById(event) {
         
         const routeId = $('route-ID').val();
 
@@ -155,6 +155,7 @@
                 contentType: 'application/json',
 
                 success: printRouteDetails,
+
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error(
                         'Error getting the details of the route by ID',
