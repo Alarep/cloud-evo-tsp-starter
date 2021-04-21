@@ -34,9 +34,9 @@
             success: showRoute,
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error(
-                    'Error generating random route: ', 
-                    textStatus, 
-                    ', Details: ', 
+                    'Error generating random route: ',
+                    textStatus,
+                    ', Details: ',
                     errorThrown);
                 console.error('Response: ', jqXHR.responseText);
                 alert('An error occurred when creating a random route:\n' + jqXHR.responseText);
@@ -62,7 +62,7 @@
     function randomRoutes(event) {
         const runId = $('#runId-text-field').val();
         const generation = $('#generation-text-field').val();
-        const numToGenerate =$('#num-to-generate').val();
+        const numToGenerate = $('#num-to-generate').val();
         // Reset the contents of `#new-route-list` so that it's ready for
         // `showRoute()` to "fill" it with the incoming new routes. 
         $('#new-route-list').text('');
@@ -87,17 +87,17 @@
     // You should add each of these to `#best-route-list`
     // (after clearing it first).
     function getBestRoutes(event) {
-        
+
         console.log('getBestRoutes')
 
         const runId = $('#runId-text-field').val();
         const getLim = $('#num-best-to-get').val();
-        const gen = $('#generation-text-field').val(); // generation
+        const gen = $('#generation-text-field').val();
 
         const url = baseUrl + `/best?runId=${runId}&generation=${gen}&numToReturn=${getLim}`;
 
         $('#best-route-list').text('');
-        
+
         $.ajax(
             {
                 method: 'GET',
@@ -107,8 +107,8 @@
                 success: printBestRoute,
 
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
-                    
-                    console.error (
+
+                    console.error(
                         'Error when getting the route: ',
                         textStatus,
                         ', Details: ',
@@ -125,20 +125,16 @@
 
     function printBestRoute(result) {
 
-        console.log('printBestRoute', result);
+        for (let i = 0; i < result.length; i++) {
 
-        for  (let i = 0; i < result.length; i++) {
-            
             const routeId = result[i].routeId;
             const length = result[i].length;
-
-            // $('best-routes-list').append('<br><li>$(length), (${routeId})</li>');
 
             $('#best-route-list').append(
                 `<br><li>Route ID: ${routeId}</li>
                 <li>Route Distance: ${length}</li>
                 `
-                );
+            );
         }
     }
 
@@ -152,13 +148,10 @@
     function getRouteById(event) {
 
         console.log('getRouteById');
-        
+
         const routeId = $('#route-ID').val();
 
         const url = baseUrl + '/routes/' + routeId;
-
-        console.log('url = ', url);
-        
 
         $('#route-by-id-elements').text('');
 
@@ -196,9 +189,7 @@
             <br><li>Route Distance: ${length}</li>
             <br><li>Partition Key: ${partitionKey}</li>
             <br><li>Route ID: ${routeId}</li>`
-            );
-
-        console.log('printRouteDetails', result.routeId);
+        );
     }
 
 }(jQuery));
