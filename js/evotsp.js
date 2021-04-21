@@ -105,7 +105,7 @@
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     
                     console.error (
-                        'Error when getting the route by ID: ',
+                        'Error when getting the route: ',
                         textStatus,
                         ', Details: ',
                         errorThrown
@@ -127,7 +127,31 @@
     // You should display the returned information in 
     // `#route-by-id-elements` (after clearing it first).
     function getRouteById() {
-        alert('You need to implement getRouteById()');
+        
+        const url = baseUrl + '/routes/routeId';
+        
+        const routeId = $('route-ID').val();
+
+        $('#route-by-id').text('');
+
+        $.ajax(
+            {
+                method: 'GET',
+                url: url,
+                contentType: 'application/json',
+
+                error:function ajaxError(jqXHR, textStatus, errorThrown) {
+                    console.error(
+                        'Error getting the details of the route by ID',
+                        textStatus,
+                        ', Details: ',
+                        errorThrown
+                    );
+                    console.error('Response: ', jqXHR.responseText);
+                    alert('An error occured when getting the details for the route: \n' + jqXHR.responseText);
+                }
+            }
+        )
     }
 
 }(jQuery));
