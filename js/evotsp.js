@@ -96,6 +96,7 @@
 
         $('#best-routes-list').text('');
         
+        success: printBestRoute,
         $.ajax(
             {
                 method: 'GET',
