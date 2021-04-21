@@ -92,7 +92,7 @@
 
         const runId = $('#runId-text-field').val();
         const getLim = $('#num-to-get').val();
-        const gen = $('#gen-text-field').val(); // generation
+        const gen = $('#generation-text-field').val(); // generation
 
         const url = baseUrl + `/best?runId=${runId}&generation=${gen}&numToReturn=${getLim}`;
 
