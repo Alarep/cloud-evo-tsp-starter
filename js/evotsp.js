@@ -195,7 +195,7 @@
             <br><li>Route ID: ${routeId}</li>`
             );
 
-            console.log('printRouteDetails', result.length);
+            console.log('printRouteDetails', result.routeId);
     }
 
 }(jQuery));
