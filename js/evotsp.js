@@ -128,7 +128,12 @@
             const routeId = result[i].routeId;
             const length = result[i].length;
 
-            $('best-routes-list').append('<br><li>$(length), (${routeId})</li>');
+            // $('best-routes-list').append('<br><li>$(length), (${routeId})</li>');
+
+            $('#best-routes-list').append(
+                `<br><li>Route Distance: ${length}</li>
+                <br><li>Route ID: ${routeId}</li>`
+                );
         }
     }
 
