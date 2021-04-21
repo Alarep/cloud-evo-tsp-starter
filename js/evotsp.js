@@ -96,6 +96,27 @@
 
         $('#best-routes-list').text('');
         
+        $.ajax(
+            {
+                method: 'GET',
+                url: url,
+                contentType: 'application/json', // Declaring the type sent to the db
+
+                error: function ajaxError(jqXHR, textStatus, errorThrown) {
+                    
+                    console.error (
+                        'Error when getting the route by ID: ',
+                        textStatus,
+                        ', Details: ',
+                        errorThrown
+                    );
+
+                    console.error('Response: ', jqXHR.responseText);
+
+                    alert('An error occurred when getting the details for the routes: \n' + jqXHR.responseText);
+                }
+            }
+        )
     }
 
     // Make a `GET` request that gets all the route information
