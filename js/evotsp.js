@@ -159,7 +159,7 @@
         console.log('url = ', url);
         
 
-        $('#route-by-id').text('');
+        $('#route-by-id-elements').text('');
 
         $.ajax(
             {
@@ -190,7 +190,7 @@
         const partitionKey = result.partitionKey;
         const routeId = result.routeId;
 
-        $('#route-by-id').append(
+        $('#route-by-id-elements').append(
             `<br><li>Route: ${route} </li>
             <br><li>Route Distance: ${length}</li>
             <br><li>Partition Key: ${partitionKey}</li>
