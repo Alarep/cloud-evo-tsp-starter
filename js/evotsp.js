@@ -183,8 +183,6 @@
 
     function printRouteDetails(result) {
 
-        console.log('printRouteDetails', result);
-
         const route = result.route;
         const length = result.length;
         const partitionKey = result.partitionKey;
@@ -196,6 +194,8 @@
             <br><li>Partition Key: ${partitionKey}</li>
             <br><li>Route ID: ${routeId}</li>`
             );
+
+            console.log('printRouteDetails', result.length);
     }
 
 }(jQuery));
