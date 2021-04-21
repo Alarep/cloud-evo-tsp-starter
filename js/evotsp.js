@@ -87,7 +87,15 @@
     // You should add each of these to `#best-route-list`
     // (after clearing it first).
     function getBestRoutes(event) {
-        alert('You need to implement getBestRoutes()');
+
+        const url = baseUrl + `/best?runId=${runId}&lim=${getLim}&g=${gen}`;
+        
+        const runId = $('#runId-text-field').val();
+        const getLim = $('#num-to-get').val();
+        const gen = $('#gen-text-field').val(); // generation
+
+        $('#best-routes-list').text('');
+        
     }
 
     // Make a `GET` request that gets all the route information
