@@ -141,7 +141,7 @@
     // `#route-by-id-elements` (after clearing it first).
     function getRouteById() {
         
-        const url = baseUrl + '/routes/routeId';
+        const url = baseUrl + '/routes/' + routeId;
         
         const routeId = $('route-ID').val();
 
@@ -154,7 +154,7 @@
                 contentType: 'application/json',
 
                 success: printRouteDetails,
-                error:function ajaxError(jqXHR, textStatus, errorThrown) {
+                error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error(
                         'Error getting the details of the route by ID',
                         textStatus,
@@ -162,7 +162,7 @@
                         errorThrown
                     );
                     console.error('Response: ', jqXHR.responseText);
-                    alert('An error occured when getting the details for the route: \n' + jqXHR.responseText);
+                    alert('An error occurred when getting the details for the route: \n' + jqXHR.responseText);
                 }
             }
         )
