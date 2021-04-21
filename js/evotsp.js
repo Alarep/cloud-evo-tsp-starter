@@ -152,7 +152,7 @@
 
         console.log('getRouteById');
         
-        const routeId = $('route-ID').val();
+        const routeId = $('#route-ID').val();
 
         const url = baseUrl + '/routes/' + routeId;
         
@@ -195,7 +195,7 @@
             <br><li>Route ID: ${routeId}</li>`
             );
 
-            console.log('printRouteDetails', result.routeId);
+        console.log('printRouteDetails', result.routeId);
     }
 
 }(jQuery));
