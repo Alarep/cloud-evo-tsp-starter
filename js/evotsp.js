@@ -155,6 +155,8 @@
         const routeId = $('#route-ID').val();
 
         const url = baseUrl + '/routes/' + routeId;
+
+        console.log('url = ', url);
         
 
         $('#route-by-id').text('');
