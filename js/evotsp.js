@@ -92,9 +92,9 @@
         const getLim = $('#num-to-get').val();
         const gen = $('#gen-text-field').val(); // generation
 
-        const url = baseUrl + `/best?runId=${runId}&numToReturn=${getLim}&generation=${gen}`;
+        const url = baseUrl + `/best?runId=${runId}&generation=${gen}&numToReturn=${getLim}`;
 
-        $('#best-routes-list').text('');
+        $('#best-route-list').text('');
         
         $.ajax(
             {
@@ -130,7 +130,7 @@
 
             // $('best-routes-list').append('<br><li>$(length), (${routeId})</li>');
 
-            $('#best-routes-list').append(
+            $('#best-route-list').append(
                 `<br><li>Route Distance: ${length}</li>
                 <br><li>Route ID: ${routeId}</li>`
                 );
