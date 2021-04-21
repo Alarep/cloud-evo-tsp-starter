@@ -93,7 +93,7 @@
         const gen = $('#gen-text-field').val(); // generation
 
         const url = baseUrl + `/best?runId=${runId}&lim=${getLim}&g=${gen}`;
-        
+
         $('#best-routes-list').text('');
         
         $.ajax(
@@ -117,6 +117,17 @@
                 }
             }
         )
+    }
+
+    function printBestRoute(result) {
+
+        for  (let i = 0; i < result.length; i++) {
+            
+            const routeId = result[i]['routeId'];
+            const length = result[i]['length'];
+
+            $('best-routes-list').append('<br><li>$(length), (${routeId})</li>');
+        }
     }
 
     // Make a `GET` request that gets all the route information
