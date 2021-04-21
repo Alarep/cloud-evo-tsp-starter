@@ -123,6 +123,8 @@
 
     function printBestRoute(result) {
 
+        console.log('printBestRoute', result)
+
         for  (let i = 0; i < result.length; i++) {
             
             const routeId = result[i].routeId;
@@ -176,6 +178,8 @@
     }
 
     function printRouteDetails(result) {
+
+        console.log('printRouteDetails', result);
 
         const route = result.route;
         const length = result.length;
