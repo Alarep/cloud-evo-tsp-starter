@@ -141,9 +141,10 @@
     // `#route-by-id-elements` (after clearing it first).
     function getRouteById() {
         
+        const routeId = $('route-ID').val();
+
         const url = baseUrl + '/routes/' + routeId;
         
-        const routeId = $('route-ID').val();
 
         $('#route-by-id').text('');
 
