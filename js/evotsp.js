@@ -135,8 +135,9 @@
             // $('best-routes-list').append('<br><li>$(length), (${routeId})</li>');
 
             $('#best-route-list').append(
-                `<br><li>Route Distance: ${length}</li>
-                <li>Route ID: ${routeId}</li>`
+                `<br><li>Route ID: ${routeId}</li>
+                <li>Route Distance: ${length}</li>
+                `
                 );
         }
     }
