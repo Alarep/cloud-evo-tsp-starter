@@ -92,7 +92,7 @@
         const getLim = $('#num-to-get').val();
         const gen = $('#gen-text-field').val(); // generation
 
-        const url = baseUrl + `/best?runId=${runId}&lim=${getLim}&g=${gen}`;
+        const url = baseUrl + `/best?runId=${runId}&numToReturn=${getLim}&generation=${gen}`;
 
         $('#best-routes-list').text('');
         
