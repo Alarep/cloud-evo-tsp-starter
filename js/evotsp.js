@@ -88,6 +88,8 @@
     // (after clearing it first).
     function getBestRoutes(event) {
         
+        console.log('getBestRoutes')
+
         const runId = $('#runId-text-field').val();
         const getLim = $('#num-to-get').val();
         const gen = $('#gen-text-field').val(); // generation
@@ -123,7 +125,7 @@
 
     function printBestRoute(result) {
 
-        console.log('printBestRoute', result)
+        console.log('printBestRoute', result);
 
         for  (let i = 0; i < result.length; i++) {
             
@@ -147,6 +149,8 @@
     // You should display the returned information in 
     // `#route-by-id-elements` (after clearing it first).
     function getRouteById(event) {
+
+        console.log('getRouteById');
         
         const routeId = $('route-ID').val();
 
