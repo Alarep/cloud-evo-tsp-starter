@@ -96,12 +96,13 @@
 
         $('#best-routes-list').text('');
         
-        success: printBestRoute,
         $.ajax(
             {
                 method: 'GET',
                 url: url,
                 contentType: 'application/json', // Declaring the type sent to the db
+
+                success: printBestRoute,
 
                 error: function ajaxError(jqXHR, textStatus, errorThrown) {
                     
