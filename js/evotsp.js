@@ -140,6 +140,7 @@
                 url: url,
                 contentType: 'application/json',
 
+                success: printRouteDetails,
                 error:function ajaxError(jqXHR, textStatus, errorThrown) {
                     console.error(
                         'Error getting the details of the route by ID',
@@ -152,6 +153,21 @@
                 }
             }
         )
+    }
+
+    function printRouteDetails(result) {
+
+        const route = result.route;
+        const length = result.length;
+        const partitionKey = result.partitionKey;
+        const routeId = result.routeId;
+
+        $('#route-by-id').append(
+            `<br><li>Route: ${route} </li>
+            <br><li>Route Distance: ${length}</li>
+            <br><li>Partition Key: ${partitionKey}</li>
+            <br><li>Route ID: ${routeId}</li>`
+            );
     }
 
 }(jQuery));
